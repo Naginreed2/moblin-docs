@@ -1,0 +1,36 @@
+---
+title: 欢迎使用 Starlight
+description: 开始使用 Starlight 构建您的文档站点。
+template: splash
+hero:
+  tagline: 恭喜您成功搭建新的 Starlight 项目！
+  image:
+    file: ../../../assets/hero.svg
+  actions:
+    - text: To the Docs
+      link: /zh-cn/0-start/welcome/
+      icon: right-arrow
+    - text: 阅读 Starlight 文档
+      link: https://starlight.astro.build
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## 下一步
+
+<CardGrid stagger>
+	<Card title="更新内容" icon="pencil">
+		编辑 `src/content/docs/index.mdx` 文件即可看到此页面变化。
+	</Card>
+	<Card title="添加新内容" icon="add-document">
+		在 `src/content/docs` 目录下添加 Markdown 或 MDX 文件以创建新页面。
+	</Card>
+	<Card title="配置站点" icon="setting">
+		在 `astro.config.mjs` 中编辑您的 `sidebar` 和其他配置。
+	</Card>
+	<Card title="阅读文档" icon="open-book">
+		了解更多信息，请参阅 [Starlight 官方文档](https://starlight.astro.build/)。
+	</Card>
+</CardGrid>/srv/mobdocs/src/content/docs/zh-cn/index.mdx
