@@ -9,7 +9,7 @@ export default defineConfig({
 			title: 'Moblin',
 			logo: { src: './src/assets/moblin-logo.svg', },
 			social: [
-				{ icon: 'download', label: 'Moblin', href: 'https://apps.apple.com/app/id6466745933' },
+				{ icon: 'apple', label: 'Moblin', href: 'https://apps.apple.com/app/id6466745933' },
 				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/nt3UwHqbMM' },
 				{ icon: 'github', label: 'Github', href: 'https://github.com/eerimoq/moblin' },
 			],
