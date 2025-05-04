@@ -1,0 +1,41 @@
+---
+title: Home
+description: Starte mit dem Aufbau deiner Dokumentationsseite mit Starlight.
+template: splash
+hero:
+  title: Willkommen bei Moblin
+  tagline: Glückwunsch zum Einrichten deines neuen Starlight-Projekts!
+  image:
+    file: ../../../assets/hero.svg
+  actions:
+    - text: Zu den Docs
+      link: /de/0-start/welcome/
+      icon: open-book
+    - text: App herunterladen
+      link: https://apps.apple.com/app/id6466745933
+      icon: download
+      variant: secondary
+    - text: Discord beitreten
+      link: https://discord.gg/nt3UwHqbMM
+      icon: discord
+      variant: primary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Nächste Schritte
+
+<CardGrid>
+  <Card title="Inhalte aktualisieren" icon="pencil">
+    Bearbeite `src/content/docs/index.mdx`, um diese Seite zu ändern.
+  </Card>
+  <Card title="Neue Inhalte hinzufügen" icon="add-document">
+    Füge Markdown- oder MDX-Dateien zu `src/content/docs` hinzu, um neue Seiten zu erstellen.
+  </Card>
+  <Card title="Seite konfigurieren" icon="setting">
+    Bearbeite deine `sidebar` und andere Einstellungen in `astro.config.mjs`.
+  </Card>
+  <Card title="Die Dokumentation lesen" icon="open-book">
+    Erfahre mehr in den [Starlight-Dokumenten](https://starlight.astro.build).
+  </Card>
+</CardGrid>

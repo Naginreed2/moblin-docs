@@ -6,14 +6,14 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'Moblin Docs',
+			title: 'Moblin',
 			logo: { src: './src/assets/moblin-logo.svg', },
 			social: [
 				{ icon: 'download', label: 'Moblin', href: 'https://apps.apple.com/app/id6466745933' },
 				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/nt3UwHqbMM' },
 				{ icon: 'github', label: 'Github', href: 'https://github.com/eerimoq/moblin' },
 			],
-			editLink: { baseUrl: 'https://github.com/withastro/starlight/edit/main/docs/', },
+			editLink: { baseUrl: 'https://github.com/Naginreed2/mobdocs/tree/main/', },
 			sidebar: [
 				{
 					label: 'Start here',
@@ -84,21 +84,19 @@ export default defineConfig({
 					collapsed: false,
 					autogenerate: { directory: 'm-guides' },
 				},
+				{
+					label: 'N-Experimental',
+					collapsed: false,
+					badge: 'Testflight',
+					autogenerate: { directory: 'n-experimental' },
+				},
 			],
-			defaultLocale: 'root', //default and fallback language
+			defaultLocale: 'en',
 			locales: {
-				root: {
-					label: 'English',
-					lang: 'en'
-				},
-				'zh-cn': {
-					label: '简体中文',
-					lang: 'zh-CN',
-				},
-				ar: {
-					label: 'العربية',
-					dir: 'rtl',
-				},
+				en: {label: 'English',lang: 'en',},
+				'zh-cn': {label: '简体中文',lang: 'zh-CN',},
+				ar: {label: 'العربية',dir: 'rtl',},
+				de: {label: 'Deutsch',lang: 'de'},
 			  },
 		}),
 	],

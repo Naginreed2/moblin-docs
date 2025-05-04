@@ -1,0 +1,10 @@
+---
+if (import.meta.env.SSR) {
+  return new Response(null, {
+    status: 302,
+    headers: { Location: '/en/' }
+  });
+}
+---
+
+<p>Redirecting to <a href="/en/">/en/</a>...</p>
