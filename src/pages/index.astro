@@ -1,0 +1,9 @@
+---
+if (import.meta.env.SSR) {
+  return new Response(null, {
+    status: 302,
+    headers: { Location: '/en/' },
+  });
+}
+throw new Error("This redirect only applies in SSR.");
+---

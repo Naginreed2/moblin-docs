@@ -1,0 +1,93 @@
+---
+import Zoom from 'starlight-image-zoom/components/ImageZoom.astro';
+
+export interface Props {
+  src: string;
+  alt?: string;
+  orientation?: 'vertical' | 'horizontal';
+  className?: string;
+}
+
+const {
+  src,
+  alt = 'App screenshot',
+  orientation = 'vertical',
+  className = '',
+} = Astro.props;
+
+const frame = orientation === 'horizontal'
+  ? '/images/iphone14-horizontal-bl.png'
+  : '/images/iphone14-vertical-bl.png';
+
+const aspect = orientation === 'horizontal' ? '1512 / 750' : '750 / 1512';
+const screenStyle = orientation === 'horizontal'
+  ? {
+      top: '11%',
+      bottom: '2%',
+      left: '0%',
+      right: '0%',
+      radius: '17%'
+    }
+  : {
+      top: '4%',
+      bottom: '0%',
+      left: '6%',
+      right: '6%',
+      radius: '0%'
+    };
+
+const containerStyle = orientation === 'horizontal'
+  ? 'width: 100%; max-width: 750px;'
+  : 'height: 100%; max-height: 750px;';
+---
+
+<style>
+  .phone-mockup {
+    position: relative;
+    margin: 1rem auto;
+    aspect-ratio: var(--aspect);
+  }
+
+  .phone-screen {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .phone-mockup img.frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+</style>
+
+<div
+  class={`phone-mockup ${className}`}
+  style={`--aspect: ${aspect}; ${containerStyle}`}
+>
+  <div
+    class="phone-screen"
+    style={`
+      top: ${screenStyle.top};
+      bottom: ${screenStyle.bottom};
+      left: ${screenStyle.left};
+      right: ${screenStyle.right};
+    `}
+  >
+  <Zoom>
+    <img src={src} alt={alt} style={`border-radius: ${screenStyle.radius};`} />
+    </div>
+  <img src={frame} alt="" class="frame" />
+</Zoom>
+</div>
